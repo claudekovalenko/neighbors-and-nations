@@ -102,7 +102,13 @@ export function modal(title, body, actions = []) {
 }
 
 export async function loadSettings() {
-  const { data, error } = await sb.from('nn_settings').select('key, value');
-  if (error) throw error;
-  return Object.fromEntries((data || []).map((r) => [r.key, r.value]));
+  const { SETTINGS } = await import('./content.js');
+  try {
+    const { data, error } = await sb.from('nn_settings').select('key, value');
+    if (error) throw error;
+    const db = Object.fromEntries((data || []).map((r) => [r.key, r.value]));
+    return { ...SETTINGS, ...db };
+  } catch {
+    return { ...SETTINGS };
+  }
 }
