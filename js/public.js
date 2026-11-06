@@ -78,6 +78,16 @@ async function renderHome(main, { settings }) {
         : h('p', { class: 'muted' }, 'No upcoming events posted yet.')));
 }
 
+const PAGE_BANNERS = {
+  about:        'assets/images/ce77ee7612c147b388f6587eff1f3f8a.png',
+  sundays:      'assets/images/58a9a6083c444dd8a36c827699d9d28c.png',
+  gatherings:   'assets/images/a766e52fe54d4c0b8735680aaaf0688f.png',
+  ministries:   'assets/images/ce9c94307eb540da82bec521038a1383.png',
+  outreach:     'assets/images/be0a12f85aa24a3087100d1b353c8eb5.png',
+  leadership:   'assets/images/1e639e3b8a234ac2a4ab6e901e245005.png',
+  'house-churches': 'assets/images/ce9c94307eb540da82bec521038a1383.png',
+};
+
 async function renderPage(main, slug, extra) {
   const page = await getPage(slug);
   if (!page) {
@@ -85,10 +95,15 @@ async function renderPage(main, slug, extra) {
       h('p', {}, h('a', { href: '#/' }, 'Back to home'))));
     return;
   }
-  main.append(h('div', { class: 'wrap page' },
-    h('h1', {}, page.title),
-    h('div', { class: 'prose', html: md(page.body) }),
-    extra || null));
+  const banner = PAGE_BANNERS[slug]
+    ? h('img', { class: 'page-banner', src: PAGE_BANNERS[slug], alt: '' })
+    : null;
+  main.append(
+    banner,
+    h('div', { class: 'wrap page' },
+      h('h1', {}, page.title),
+      h('div', { class: 'prose', html: md(page.body) }),
+      extra || null));
 }
 
 async function renderEvents(main) {
