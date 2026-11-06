@@ -28,13 +28,15 @@ async function getPage(slug) {
 }
 
 async function upcomingEvents(limit) {
-  const { data, error } = await sb.from('nn_events').select('*')
-    .eq('is_public', true)
-    .gte('starts_at', isoDate(new Date()))
-    .order('starts_at')
-    .limit(limit);
-  if (error) throw error;
-  return data || [];
+  try {
+    const { data, error } = await sb.from('nn_events').select('*')
+      .eq('is_public', true)
+      .gte('starts_at', isoDate(new Date()))
+      .order('starts_at')
+      .limit(limit);
+    if (!error) return data || [];
+  } catch { /* no DB yet */ }
+  return [];
 }
 
 function eventCard(ev) {
