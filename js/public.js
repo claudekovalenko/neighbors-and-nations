@@ -71,7 +71,6 @@ async function renderHome(main, { settings }) {
       h('div', { class: 'info-tile' }, h('h3', {}, 'Sundays'), h('p', {}, settings.service_times || 'Sunday mornings')),
       h('div', { class: 'info-tile' }, h('h3', {}, 'Where'), h('p', {}, settings.address || 'Ask us for directions')),
       h('div', { class: 'info-tile' }, h('h3', {}, 'Kids & youth'), h('p', {}, settings.kids_blurb || 'n2 Kids on Sundays, Awana on Wednesdays'))),
-    page ? h('section', { class: 'wrap prose', html: md(page.body) }) : null,
     h('section', { class: 'wrap' },
       h('div', { class: 'section-head' }, h('h2', {}, 'Coming up'), h('a', { href: '#/events' }, 'Full calendar →')),
       events.length ? h('div', { class: 'event-list' }, events.map(eventCard))
@@ -95,15 +94,21 @@ async function renderPage(main, slug, extra) {
       h('p', {}, h('a', { href: '#/' }, 'Back to home'))));
     return;
   }
-  const banner = PAGE_BANNERS[slug]
-    ? h('img', { class: 'page-banner', src: PAGE_BANNERS[slug], alt: '' })
-    : null;
-  main.append(
-    banner,
-    h('div', { class: 'wrap page' },
-      h('h1', {}, page.title),
-      h('div', { class: 'prose', html: md(page.body) }),
-      extra || null));
+  const bannerSrc = PAGE_BANNERS[slug];
+  if (bannerSrc) {
+    main.append(
+      h('div', { class: 'page-hero', style: `background-image:url(${bannerSrc})` },
+        h('div', { class: 'wrap' }, h('h1', {}, page.title))),
+      h('div', { class: 'wrap page-body' },
+        h('div', { class: 'prose', html: md(page.body) }),
+        extra || null));
+  } else {
+    main.append(
+      h('div', { class: 'wrap page' },
+        h('h1', {}, page.title),
+        h('div', { class: 'prose', html: md(page.body) }),
+        extra || null));
+  }
 }
 
 async function renderEvents(main) {
