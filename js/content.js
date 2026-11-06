@@ -12,6 +12,8 @@ export const SETTINGS = {
   youtube_url:         'https://www.youtube.com/@NeighborsAndNations',
   instagram_url:       'https://www.instagram.com/neighborsandnations',
   text_to_give_number: '84321',
+  phone:               '562.429.4340',
+  contact_email:       'contact@neighborsandnations.org',
 };
 
 export const PAGES = {
@@ -262,7 +264,158 @@ We'd love to hear from you!
 
 **Address:** 6575 Crescent Ave., Buena Park, CA 90620
 
+**Phone:** 562.429.4340
+
+**Email:** [contact@neighborsandnations.org](mailto:contact@neighborsandnations.org)
+
 Office hours: Monday–Thursday
+`.trim(),
+  },
+
+  gatherings: {
+    title: 'Gatherings',
+    body: `
+## Welcome to Neighbors & Nations
+
+Our mission is to impact our neighbors and the nations for the sake of the Kingdom of God, striving to become more and more like Jesus.
+
+---
+
+## Sunday Mornings
+
+We gather every Sunday at **9:30 AM** at 6575 Crescent Ave., Buena Park, CA 90620.
+
+Services for kids newborn–5th grade are available during the service.
+
+Sunday mornings we come together as a gathering of churches in unity and celebration — corporately worshipping and studying the Word with one another.
+
+---
+
+## House Churches (Monday–Friday)
+
+As we read Scripture, we see that the early Church gathered day by day, not just once a week. We have multiple house churches meeting throughout the week in Orange County. Because they are smaller, intentional care and vulnerability are a huge part of the gathering, centered in the Truth of the Gospel.
+
+[Find a house church near you.](#/house-churches)
+
+---
+
+## What to Expect
+
+**Friendly Faces** — When you arrive for the first time, go to a greeter and say "This is my first time!" They'll guide you in and introduce you around. Stop by the welcome table or 1040 Coffee for a free coffee on us.
+
+**Casual Atmosphere** — We are more concerned with people's hearts than what they're wearing. Shorts or a suit — you'll feel welcome and fit in no matter what.
+
+You will never be singled out as a visitor. You can remain entirely anonymous if you'd like, although we'd still love to meet you!
+`.trim(),
+  },
+
+  'house-churches': {
+    title: 'House Churches',
+    body: `
+## House Churches
+
+We love gathering on Sunday mornings, but as we read Scripture we see that just once a week is not enough. The church in Acts gathered day by day — so we do the same. Our house churches encourage intimate care and vulnerability, unified vision, accountability, worship, and digging into the Word together.
+
+---
+
+### Monday
+
+**Noonday Church** · Buena Park · 12:00 PM
+Contact Geno Umana (714) 697-3497
+
+**Kingdom Church** · La Mirada · 6:30 PM
+Contact Jason Valentin (714) 812-4827
+
+---
+
+### Wednesday
+
+**Passion Church** · Long Beach, near CSULB · 6:00 PM
+Contact David & Stephanie Abbott (714) 296-9878
+
+**Hosanna Church** · Buena Park · 6:00 PM
+Contact Josh & Kasey McKay (714) 928-8443
+
+**Fellowship of the Sword** · Westminster · 7:00 PM
+Contact Alec (714) 355-8185
+
+**Church in A3** *(1st and 3rd Wednesdays)* · Buena Park · 7:00 PM
+Contact Thom and Patti Glonchak (714) 724-7503
+
+---
+
+### Thursday
+
+**Ritter Church** · Cypress · 6:30 PM
+Contact Jeff & Liz Timblin (714) 319-5789
+
+**Church on Raven** · Aliso Viejo · 7:00 PM
+Contact Craig & Jen Mazzagatte (949) 322-2686
+
+**Anchor** · Anaheim · 6:30 PM
+Contact Justin Bain (562) 343-6937 or Ben Timblin (714) 733-8213
+
+**Church in East LA** · East Los Angeles · 7:00 PM
+Contact Daniel Bonilla (562) 450-5847 *(español)*
+
+**Freeing Truth** · Stanton · 7:00 PM
+Contact Titus Stickler (657) 271-3869
+
+**Rooted** · Compton · 6:30 PM
+Contact George Estupinan (562) 719-1042
+
+**Rockson** · Garden Grove · 6:30 PM
+Contact Matt and Jeanette Rockwood (714) 756-0095
+
+---
+
+### Sunday
+
+Be strengthened and equipped in the faith by gathering during the week — learning how to be the Church Monday through Saturday amongst your neighbors.
+`.trim(),
+  },
+
+  leadership: {
+    title: 'Leadership',
+    body: `
+## Our Team
+
+Neighbors & Nations has an incredible team leading out the mission of the church.
+
+---
+
+### Staff
+
+| Name | Role |
+|------|------|
+| Jeff Timblin | Pastor |
+| Josh McKay | Pastor |
+| Nathan Hazard Reyes | Teaching Pastor |
+| Nick Fasulo | Youth Pastor |
+| Isaac Reyes | Junior High Pastor |
+| Jorge Estupiñan | Vecinos y Naciones Pastor / Worship Pastor |
+| Jenny Lindner | Office Administrator |
+| Liz Timblin | Children's Pastor |
+| Ben Timblin | Young Adults |
+| Justin Bain | Campus Coordinator |
+
+---
+
+### Lead Elders
+
+Tim Herman · Craig Mazzagatte · Josh McKay · Bill Noe · Jeff Timblin · Drake Yomogida
+
+---
+
+### Lead Shepherds
+
+David Abbott · Josh McKay · Eva Radford · Jeff Timblin · Steve Weightman · Steve Diaz
+
+---
+
+### Lead Deacons
+
+Justin Bain · Shawn Campbell · Mike Martin · Denise Coburn · Ken Wilkes
 `.trim(),
   },
 };
