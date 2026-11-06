@@ -78,13 +78,20 @@ async function renderHome(main, { settings }) {
 }
 
 const PAGE_BANNERS = {
-  about:        'assets/images/ce77ee7612c147b388f6587eff1f3f8a.png',
-  sundays:      'assets/images/58a9a6083c444dd8a36c827699d9d28c.png',
-  gatherings:   'assets/images/a766e52fe54d4c0b8735680aaaf0688f.png',
-  ministries:   'assets/images/ce9c94307eb540da82bec521038a1383.png',
-  outreach:     'assets/images/be0a12f85aa24a3087100d1b353c8eb5.png',
-  leadership:   'assets/images/1e639e3b8a234ac2a4ab6e901e245005.png',
+  about:            'assets/images/ce77ee7612c147b388f6587eff1f3f8a.png',
+  sundays:          'assets/images/58a9a6083c444dd8a36c827699d9d28c.png',
+  gatherings:       'assets/images/a766e52fe54d4c0b8735680aaaf0688f.png',
+  ministries:       'assets/images/ce9c94307eb540da82bec521038a1383.png',
+  outreach:         'assets/images/be0a12f85aa24a3087100d1b353c8eb5.png',
+  leadership:       'assets/images/1e639e3b8a234ac2a4ab6e901e245005.png',
   'house-churches': 'assets/images/ce9c94307eb540da82bec521038a1383.png',
+};
+const PAGE_BANNER_POS = {
+  ministries:       'center 65%',
+  'house-churches': 'center 65%',
+  outreach:         'center 60%',
+  sundays:          'center 35%',
+  leadership:       'center 25%',
 };
 
 async function renderPage(main, slug, extra) {
@@ -96,8 +103,9 @@ async function renderPage(main, slug, extra) {
   }
   const bannerSrc = PAGE_BANNERS[slug];
   if (bannerSrc) {
+    const pos = PAGE_BANNER_POS[slug] || 'center';
     main.append(
-      h('div', { class: 'page-hero', style: `background-image:url(${bannerSrc})` },
+      h('div', { class: 'page-hero', style: `background-image:url(${bannerSrc});background-position:${pos}` },
         h('div', { class: 'wrap' }, h('h1', {}, page.title))),
       h('div', { class: 'wrap page-body' },
         h('div', { class: 'prose', html: md(page.body) }),
