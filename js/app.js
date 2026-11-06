@@ -70,14 +70,15 @@ async function route() {
 
 async function boot() {
   try {
-    const [settings, pages] = await Promise.all([
-      loadSettings(),
-      sb.from('nn_pages').select('slug, title, show_in_nav, sort').eq('is_public', true).eq('show_in_nav', true).order('sort'),
-    ]);
-    state.settings = settings;
-    state.navPages = pages.data || [];
+    state.settings = await loadSettings();
   } catch (err) {
     console.error(err);
+  }
+  try {
+    const { data } = await sb.from('nn_pages').select('slug, title, show_in_nav, sort').eq('is_public', true).eq('show_in_nav', true).order('sort');
+    state.navPages = data || [];
+  } catch {
+    state.navPages = [];
   }
   await refreshAuth();
   if (state.settings.church_name) document.title = state.settings.church_name;
