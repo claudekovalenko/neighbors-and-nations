@@ -156,8 +156,6 @@ Missed a Sunday? All messages are on [YouTube](https://www.youtube.com/@Neighbor
   ministries: {
     title: 'Ministries',
     body: `
-## Ministries
-
 We are a Jesus-worshipping community that equips and unleashes Christ followers to make disciples and plant churches. Each ministry works to accomplish that vision.
 
 ---
@@ -189,8 +187,6 @@ Feel led to start something? [Contact us](#/contact) and our leadership team wil
   outreach: {
     title: 'Outreach',
     body: `
-## Outreach
-
 Our heart beats for what God's does. We get to play a part in bringing His Kingdom to earth, around the world.
 
 ---
@@ -224,8 +220,6 @@ Whether short term or long term, we love sending people out to take the Good New
   give: {
     title: 'Give',
     body: `
-## Give
-
 By giving to the mission God is working through Neighbors and Nations, you are investing in the eternity of lives in our community and around the world. Thank you for joyfully partnering with us!
 
 ---
@@ -249,8 +243,6 @@ Giving boxes are in the lobby. Envelopes are provided for cash or check. You can
   prayer: {
     title: 'Prayer',
     body: `
-## Prayer
-
 We believe in the power of prayer and would love to pray with you. Use the form below to share how we can be praying for you. Requests go only to our staff and prayer team.
 `.trim(),
   },
@@ -312,8 +304,6 @@ You will never be singled out as a visitor. You can remain entirely anonymous if
   'house-churches': {
     title: 'House Churches',
     body: `
-## House Churches
-
 We love gathering on Sunday mornings, but as we read Scripture we see that just once a week is not enough. The church in Acts gathered day by day — so we do the same. Our house churches encourage intimate care and vulnerability, unified vision, accountability, worship, and digging into the Word together.
 
 ---
