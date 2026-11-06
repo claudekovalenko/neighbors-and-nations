@@ -117,7 +117,7 @@ a:hover { text-decoration: underline; }
 .page-hero::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(20,45,60,.85) 0%, rgba(20,45,60,.35) 100%);
+  background: linear-gradient(to top, rgba(10,30,45,.75) 0%, rgba(10,30,45,.20) 100%);
 }
 .page-hero .wrap {
   position: relative; z-index: 1;
