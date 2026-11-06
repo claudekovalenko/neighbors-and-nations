@@ -101,10 +101,16 @@ a:hover { text-decoration: underline; }
 
 /* ===== Hero ===== */
 .hero {
-  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  background: linear-gradient(rgba(30,68,89,.72), rgba(30,68,89,.82)),
+              url('../assets/images/hero.png') center/cover no-repeat;
   color: #fff;
   padding: 80px 0 72px;
   text-align: center;
+}
+.page-banner {
+  width: 100%; height: 280px;
+  object-fit: cover; object-position: center;
+  display: block;
 }
 .hero h1 {
   font-family: var(--font-heading);
