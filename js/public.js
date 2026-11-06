@@ -1,4 +1,5 @@
 import { sb, h, md, toast, fail, fmtDate, fmtTime, isoDate } from './lib.js';
+import { PAGES } from './content.js';
 
 const CORE_NAV = [
   ['#/', 'Home'],
@@ -18,9 +19,12 @@ export function publicNav(navPages) {
 }
 
 async function getPage(slug) {
-  const { data, error } = await sb.from('nn_pages').select('*').eq('slug', slug).maybeSingle();
-  if (error) throw error;
-  return data;
+  try {
+    const { data, error } = await sb.from('nn_pages').select('*').eq('slug', slug).maybeSingle();
+    if (!error && data) return data;
+  } catch { /* fall through */ }
+  const p = PAGES[slug];
+  return p ? { slug, title: p.title, body: p.body } : null;
 }
 
 async function upcomingEvents(limit) {
