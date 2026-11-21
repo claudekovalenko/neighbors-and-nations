@@ -376,18 +376,19 @@ Neighbors & Nations has an incredible team leading out the mission of the church
 
 ### Staff
 
-| Name | Role |
-|------|------|
-| Jeff Timblin | Pastor |
-| Josh McKay | Pastor |
-| Nathan Hazard Reyes | Teaching Pastor |
-| Nick Fasulo | Youth Pastor |
-| Isaac Reyes | Junior High Pastor |
-| Jorge Estupiñan | Vecinos y Naciones Pastor / Worship Pastor |
-| Jenny Lindner | Office Administrator |
-| Liz Timblin | Children's Pastor |
-| Ben Timblin | Young Adults |
-| Justin Bain | Campus Coordinator |
+| Photo | Name | Role |
+|------|------|------|
+| ![Jeff Timblin](assets/images/41f2605f1578497dabc2a75c68076dd8.jpg) | Jeff Timblin | Pastor |
+| ![Josh McKay](assets/images/0b2f9bb10102411f8ca3b1952ef0d096.jpg) | Josh McKay | Pastor |
+| ![Nathan Hazard Reyes](assets/images/55b735bba8bb4c59a31e48246ba711c8.jpg) | Nathan Hazard Reyes | Teaching Pastor |
+| ![Nick Fasulo](assets/images/d9f541f7e00f46e18477b75ccfb39f61.jpg) | Nick Fasulo | Youth Pastor |
+| ![Isaac Reyes](assets/images/4b3ec7585fc34cabab50bd97a65b43e6.jpg) | Isaac Reyes | Junior High Pastor |
+| ![Jorge Estupiñan](assets/images/ecf3bed33f8e4cb993649f3d8a40a19b.jpg) | Jorge Estupiñan | Vecinos y Naciones Pastor |
+| ![Jorge Estupiñan](assets/images/d6969de861924553b63a9cadd321c8cd.jpg) | Jorge Estupiñan | Worship Pastor |
+| ![Jenny Lindner](assets/images/d3ffe95f63ce4f2694db1b76e64714b6.jpg) | Jenny Lindner | Office Administrator |
+| ![Liz Timblin](assets/images/d312fe262fb04f92a9deb2d0dab4dc1a.jpg) | Liz Timblin | Children's Pastor |
+| ![Ben Timblin](assets/images/2ee775649c6b4b4192a29bfac57bb5f9.jpg) | Ben Timblin | Young Adults |
+| ![Justin Bain](assets/images/1e639e3b8a234ac2a4ab6e901e245005.jpg) | Justin Bain | Campus Coordinator |
 
 ---
 
