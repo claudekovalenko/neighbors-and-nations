@@ -48,6 +48,6 @@ YouTube channel: https://m.youtube.com/@NeighborsAndNations
   `### Heading` (or a short `##`) sections → cards, and neighbouring cards form a grid. `---` separates sections.
 - House churches and Leadership parse their markdown into cards (day filters, tap-to-call numbers, photo cards).
   Leadership staff table columns are found by header: `Photo` (markdown image, optional; initials if blank), `Name`, `Role`.
-  Headshots were matched to names from the old Wix church-leadership page.
+  Headshots (`assets/images/staff-*.jpg`, 800×1000) are the uncropped originals from the old Wix church-leadership page, matched to names there.
   Keep the same line format (`**Name** · City · Time` then `Contact …`) or they fall back to the generic layout.
 - Images were re-encoded as progressive JPEGs (≤1400px, hero 1920px): 21 MB → 3.5 MB.
