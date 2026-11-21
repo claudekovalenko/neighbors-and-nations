@@ -425,7 +425,15 @@ async function renderLeadership(main) {
   const table = tmp.querySelector('table');
   if (!table) return renderPage(main, 'leadership');
 
-  const staff = [...table.querySelectorAll('tbody tr')].map((tr) => [...tr.cells].map((c) => c.textContent.trim()));
+  // Columns are found by header text so "Photo" stays optional and can sit anywhere.
+  const heads = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim().toLowerCase());
+  const col = (name, fallback) => { const i = heads.indexOf(name); return i >= 0 ? i : fallback; };
+  const [iName, iRole, iPhoto] = [col('name', 0), col('role', 1), col('photo', -1)];
+  const staff = [...table.querySelectorAll('tbody tr')].map((tr) => ({
+    name: tr.cells[iName]?.textContent.trim() || '',
+    role: tr.cells[iRole]?.textContent.trim() || '',
+    photo: iPhoto >= 0 ? tr.cells[iPhoto]?.querySelector('img')?.getAttribute('src') : null,
+  })).filter((p) => p.name);
   const teams = [...tmp.querySelectorAll('h3')].map((h3) => {
     let p = h3.nextElementSibling;
     while (p && p.nodeName !== 'P' && p.nodeName !== 'H3') p = p.nextElementSibling;
@@ -434,22 +442,18 @@ async function renderLeadership(main) {
   }).filter(Boolean);
   const introP = tmp.querySelector('h2 + p');
 
-  const portraits = ['0b2f9bb10102411f8ca3b1952ef0d096', '41f2605f1578497dabc2a75c68076dd8', 'd3ffe95f63ce4f2694db1b76e64714b6',
-    '4b3ec7585fc34cabab50bd97a65b43e6', 'ecf3bed33f8e4cb993649f3d8a40a19b', 'd312fe262fb04f92a9deb2d0dab4dc1a',
-    '55b735bba8bb4c59a31e48246ba711c8', 'd6969de861924553b63a9cadd321c8cd', '1e639e3b8a234ac2a4ab6e901e245005',
-    'd9f541f7e00f46e18477b75ccfb39f61', '2ee775649c6b4b4192a29bfac57bb5f9'];
-
   main.append(
     pageHero('leadership', page.title),
     h('div', { class: 'wrap page-body' },
       introP ? h('div', { class: 'prose lead reveal' }, introP) : null,
-      h('div', { class: 'portraits reveal', 'aria-hidden': 'true' },
-        portraits.map((p, i) => h('img', { src: IMG(p), alt: '', loading: 'lazy', style: `--i:${i}` }))),
       sectionHead('Staff', 'Our team'),
-      h('div', { class: 'people' }, staff.map(([name, role], i) =>
-        h('article', { class: 'person reveal', style: `--d:${(i % 4) * 60}ms` },
-          h('span', { class: 'avatar', 'data-hue': String(i % 5) }, initials(name)),
-          h('div', {}, h('h3', {}, name), h('p', {}, role))))),
+      h('div', { class: 'people' }, staff.map(({ name, role, photo }, i) =>
+        h('article', { class: `person reveal${photo ? ' has-photo' : ''}`, style: `--d:${(i % 4) * 70}ms` },
+          photo
+            ? h('div', { class: 'person-photo' }, h('img', { src: photo, alt: name, loading: 'lazy' }))
+            : h('span', { class: 'avatar', 'data-hue': String(i % 5) }, initials(name)),
+          h('div', { class: 'person-text' }, h('h3', {}, name), h('p', {}, role))))),
+      sectionHead('Servant leaders', 'Elders, shepherds & deacons'),
       h('div', { class: 'teams' }, teams.map((t) =>
         h('section', { class: 'team reveal' },
           h('h3', {}, t.title),
