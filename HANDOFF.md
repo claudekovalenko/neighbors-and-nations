@@ -39,3 +39,13 @@ YouTube channel: https://m.youtube.com/@NeighborsAndNations
 - Biggest pain point: lost links. Phase 1 is one searchable links page; phase 2 retires Docs/Sheets entirely.
 - The Neighbors & Nations account should own all documents going forward.
 - Push notifications need a native app later (Apple developer account). This is out of scope for now.
+
+## Design system (public site)
+- Styles live in `assets/styles.css`; colors, radii and fonts are tokens on `:root` (Fraunces for display, Inter for body).
+- Page photos, focal points and hero subtitles: `PAGE_META` in `js/public.js`. Card photos by heading keyword: `CARD_IMAGES`.
+- Page bodies stay plain markdown so staff can edit them. `layout()` in `js/public.js` turns them into a designed page:
+  text before any heading → lead paragraph; a long `## Heading` section → two-column block;
+  `### Heading` (or a short `##`) sections → cards, and neighbouring cards form a grid. `---` separates sections.
+- House churches and Leadership parse their markdown into cards (day filters, tap-to-call numbers, people cards).
+  Keep the same line format (`**Name** · City · Time` then `Contact …`) or they fall back to the generic layout.
+- Images were re-encoded as progressive JPEGs (≤1400px, hero 1920px): 21 MB → 3.5 MB.
